@@ -183,6 +183,7 @@
                                  
                                  <th class="centered">Observaciones </th>
                                  <th class="centered">Acción </th>
+                                 <th class="centered">Acción </th>
                               </tr>
                               </thead>
           
@@ -199,7 +200,16 @@
                                  <th> <%= ventas.frecuecia %></th>
                                  <th> <%= ventas.valorTentativo %></th>
                                  <th> <%= ventas.observaciones %></th> 
-                                 <th> <%= ventas.Acción %> </th> 
+                                 <th> <%= ventas.Acción %>
+                                    <input class="btn btn-success" type="submit" value="Aceptar" id="Aceptar" name="Aceptar" >
+                                    
+                                 
+                                 </th> 
+                                 <th> <%= ventas.Acción %>
+                                    
+                                    <input class="btn btn-danger" type="submit" value="Rechazar" id="Rechazar" name="Rechazar">
+                                 
+                                 </th> 
 
                                 </tr>    
                                     <% }); %>
