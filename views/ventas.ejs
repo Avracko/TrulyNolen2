@@ -24,6 +24,7 @@
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="css/VentasFormulario.css">
       <!-- Tweaks for older IEs-->
       <link
       rel="stylesheet"
@@ -82,7 +83,7 @@
             </div>
          </div>
       </header>
-
+<!--
       <div class="container">
          <main class="table">
             <section class="table__header">
@@ -101,7 +102,7 @@
                         <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
                         <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
                     </div>
-                </div>-->
+                </div>
             </section>
             <section class="table__body">
                 <table>
@@ -133,7 +134,7 @@
                             <th> <%=  ventas.Estado %></th>
                             <th> <%= ventas.observaciones %></th>
                           
-                            <!--<th> Observaciones <span class="icon-arrow">&UpArrow;</span></th> Para que salga el icono de la fecha-->
+                            <th> Observaciones <span class="icon-arrow">&UpArrow;</span></th> Para que salga el icono de la fecha
                         </tr>
                         <% }); %>
                     </thead>
@@ -145,7 +146,169 @@
         </main>
 
       </div>
-    
+
+   -->
+      <div class="container1">
+         <div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+            <ul class="nav nav-tabs">
+               <li class="nav-item">
+               <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">Ventas por Aprobar</a>
+               </li>
+               <li class="nav-item">
+               <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Ventas Aprobadas</a>				   	
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" id="form-tab" data-toggle="tab" href="#form1" role="tab" aria-controls="form" aria-selected="true">Ventas Canceladas</a>				   	
+               </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+               <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                  <div class="card">
+                  <div class="card-header">
+                        <h4>Ventas por Aprobar</h4>
+                     </div>
+                     <div class="card-body">
+                        <div class="table-responsive">
+                           <table id="userList" class="table table-bordered table-hover table-striped">
+                              <thead class="thead-light">
+                              <tr>
+                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">Vendedor</th>
+                                 <th class="centered">Cliente</th>
+                                 <th class="centered">Nivel de servicio</th>
+                                 <th class="centered">Fecha Inicio</th>
+                                 <th class="centered">CFecha fin</th>
+                                 <th class="centered">Frecuencia</th>
+                                 <th class="centered">valor Temtativo</th>
+                                 
+                                 <th class="centered">Observaciones </th>
+                                 <th class="centered">Acción </th>
+                              </tr>
+                              </thead>
+          
+                                 <tbody id="tableBody_users">
+                             
+                                    <% resultado.forEach((ventas) => { %>
+                                <tr>
+                                 <th><%= ventas.ServidorId %></th>
+                                 <th> <%= ventas.Vendedor %></th>
+                                 <th> <%= ventas.Cliente %></th>
+                                 <th> <%= ventas.nivelServicio %></th>
+                                 <th> <%= ventas.FechaInicio %></th>
+                                 <th> <%= ventas.FechaFin %></th>
+                                 <th> <%= ventas.frecuecia %></th>
+                                 <th> <%= ventas.valorTentativo %></th>
+                                 <th> <%= ventas.observaciones %></th> 
+                                 <th> <%= ventas.Acción %> </th> 
+
+                                </tr>    
+                                    <% }); %>
+                                   
+                                </tbody> 
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                  <div class="card">
+                     <div class="card-header">
+                        <h4>Ventas Aprobadas</h4>
+                     </div>
+                     <div class="card-body">
+                        <div class="table-responsive">
+                           <table id="userList" class="table table-bordered table-hover table-striped">
+                              <thead class="thead-light">
+                              <tr>
+                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">Vendedor</th>
+                                 <th class="centered">Cliente</th>
+                                 <th class="centered">Nivel de servicio</th>
+                                 <th class="centered">Fecha Inicio</th>
+                                 <th class="centered">CFecha fin</th>
+                                 <th class="centered">Frecuencia</th>
+                                 <th class="centered">valor Temtativo</th>
+                                 <th class="centered">Estado</th>
+                                 <th class="centered">Observaciones </th>
+                              </tr>
+                              </thead>
+          
+                                 <tbody id="tableBody_users">
+                             
+                                    <% resultado.forEach((ventas) => { %>
+                                <tr>
+                                 <th><%= ventas.ServidorId %></th>
+                                 <th> <%= ventas.Vendedor %></th>
+                                 <th> <%= ventas.Cliente %></th>
+                                 <th> <%= ventas.nivelServicio %></th>
+                                 <th> <%= ventas.FechaInicio %></th>
+                                 <th> <%= ventas.FechaFin %></th>
+                                 <th> <%= ventas.frecuecia %></th>
+                                 <th> <%= ventas.valorTentativo %></th>
+                                 <th class="status delivered" > <%= ventas.Estado %> </th>
+                                 <th> <%= ventas.observaciones %></th>  
+                                </tr>    
+                                    <% }); %>
+                                   
+                                </tbody> 
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane fade" id="form1" role="tabpanel" aria-labelledby="form-tab">
+                  <div class="card">
+                     <div class="card-header">
+                        <h4>Ventas Canceladas</h4>
+                     </div>
+                     <div class="card-body">
+                        <div class="table-responsive">
+                           <table id="userList" class="table table-bordered table-hover table-striped">
+                              <thead class="thead-light">
+                              <tr>
+                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">Vendedor</th>
+                                 <th class="centered">Cliente</th>
+                                 <th class="centered">Nivel de servicio</th>
+                                 <th class="centered">Fecha Inicio</th>
+                                 <th class="centered">CFecha fin</th>
+                                 <th class="centered">Frecuencia</th>
+                                 <th class="centered">valor Temtativo</th>
+                                 <th class="centered">Estado</th>
+                                 <th class="centered">Observaciones </th>
+                              </tr>
+                              </thead>
+          
+                                 <tbody id="tableBody_users">
+                             
+                                    <% resultado.forEach((ventas) => { %>
+                                <tr>
+                                 <th><%= ventas.ServidorId %></th>
+                                 <th> <%= ventas.Vendedor %></th>
+                                 <th> <%= ventas.Cliente %></th>
+                                 <th> <%= ventas.nivelServicio %></th>
+                                 <th> <%= ventas.FechaInicio %></th>
+                                 <th> <%= ventas.FechaFin %></th>
+                                 <th> <%= ventas.frecuecia %></th>
+                                 <th> <%= ventas.valorTentativo %></th>
+                                 <th class="status cancelled"> <%=  ventas.Estado %></th>
+                                 <th> <%= ventas.observaciones %></th>  
+                                </tr>    
+                                    <% }); %>
+                                   
+                                </tbody> 
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <br>
+      <br>
+      <br>
       <!-- end header inner -->
       <!-- end header -->
       <!-- about section -->
@@ -209,3 +372,5 @@
       <script src="main.js"></script>
    </body>
 </html>
+
+<!---->
