@@ -20,7 +20,7 @@
     "get-document": "^1.0.0",
     "mongoose": "^7.6.3",
     "mysql2": "^3.6.5",
-    "sweetalert2": "^11.9.0",
+    "sweetalert2": "^11.10.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

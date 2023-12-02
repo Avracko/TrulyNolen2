@@ -40,9 +40,9 @@
    <!-- body -->
    <body class="main-layout position_head">
       <!-- loader  -->
-      <div class="loader_bg">
+      <!--<div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
+      </div>-->
       <!-- end loader -->
       <!-- header -->
       <header>
@@ -202,7 +202,7 @@
                                  <td class="centered"><%= Clientes.contacto %></td>
                                  <td class="centered"><%= Clientes.telefono %></td>
                                  <td>
-                                    <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times" type="submit" value="borrar" id="borrar" name="borrar"></i></a>
+                                    <a href="#list"><i class="fas fa-edit" id="editar"></i></a> | <a href="#"><i class="fas fa-user-times" type="submit" value="borrar" name="borrar"></i></a>
             
                                  </td>   
                              </tr>    
@@ -272,7 +272,7 @@
                         <input class="btn btn-success" type="submit" value="Submit" id="Insert" name="Insert">
                         <input class="btn btn-primary" type="submit" value="update" id="actualizar" name="actualizar">
                         <input class="btn btn-danger" type="submit" value="borrar" id="Save" name="borrar">
-                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                        <input type="reset" class="btn btn-secondary" value="Cancel" id="btn-crear" >
                      </form>
                   </div>
                </div>
@@ -318,6 +318,7 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
@@ -326,6 +327,7 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script src="main.js"></script>
+      <script src="sweetaler.js"></script>
    </body>
 </html>
 
