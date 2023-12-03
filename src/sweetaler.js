@@ -41,7 +41,7 @@ $("#btn-crear").click(function(){
         text:"Su informacion esta Guardada",
         icon: 'success',
         backdrop: true,
-        timer:10000,
+        timer:5000,
         timerProgressBar: true,
     
      toast: true,
@@ -80,7 +80,7 @@ $("#Save").click(function(){
 });
 
 /******** boton de rechazar  *********** */
-$("#rechazar").click(function(){
+$("#Rechazar").click(function(){
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: "btn btn-success",
@@ -125,7 +125,7 @@ $("#rechazar").click(function(){
 
      position: 'center',
    //   para no dar click afuera
-     allowOutsideClick: true,
+     allowOutsideClick: false,
      allowEscapeKey: true,
      allowEnterKey:true,
      stopKeydownPropagation: true,
