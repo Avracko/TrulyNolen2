@@ -3,7 +3,7 @@ import {con} from "../modelo/db.js"
 
 var crud_ventas = ({});
 crud_ventas.leer = (req, res) => {
-    con.query('select * from form',(error , results)=>{
+    con.query('select * from contratos',(error , results)=>{
         if (error) {
             throw error;
         }else{            

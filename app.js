@@ -42,24 +42,25 @@ app.get('/truly',crud_truly.leer);
 
 app.get('/ventas',crud_ventas.leer);
 
-   
-        
-
-
 app.get('/ventas',function(req,res){
 
     res.render('ventas')
         
 })
 
-app.get('/truly',function(req,res){
 
-    res.render('Trulyn')
-        
-})
+app.post('/update',crud_truly.update);
 
+//editar cliente apertura
+
+app.get('/trulyedit/:id',crud_truly.edit);
 app.post('/crud_c',crud_cliente.agregarC);
+//editar cliente cierre
 
+
+//Borrar Cliente Apertura
+app.get('/borrar/:id/:sucursal_id',crud_truly.borrar);
+//Cierre
 app.get('/postventa',function(req,res){
 
     res.render('PostVenta')

@@ -121,12 +121,12 @@
                           </thead>
                           <tbody id="tableBody_users">
                           
-                                <% resultado.forEach((Clientes) => { %>
+                                <% resultado.forEach((clientes) => { %>
                             <tr>
-                                <td class="centered"><%= Clientes.clienteId %></td>
-                                <td class="centered"><%= Clientes.razonsocial %></td>
-                                <td class="centered"><%= Clientes.identificador %></td>
-                                <td class="centered"><%= Clientes.rtn %></td>
+                                <td class="centered"><%= clientes.cliente_id %></td>
+                                <td class="centered"><%= clientes.razonsocial %></td>
+                                <td class="centered"><%= clientes.mote %></td>
+                                <td class="centered"><%= clientes.rtn %></td>
                             </tr>    
                                 <% }); %>
                             </tbody> 

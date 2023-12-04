@@ -4,7 +4,7 @@ import mysql2 from 'mysql2';
 export const con = mysql2.createConnection({
 
     host: 'database-2.c7hxgbp2wlyb.us-east-1.rds.amazonaws.com',
-    database: 'TrulyNolen',
+    database: 'TrulyNolen2',
     user: 'admin',
     password: 'admin1234'
 

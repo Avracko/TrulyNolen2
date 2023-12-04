@@ -172,18 +172,23 @@
                            <table id="userList" class="table table-bordered table-hover table-striped">
                               <thead class="thead-light">
                               <tr>
-                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">contrato_id</th>
                                  <th class="centered">Vendedor</th>
                                  <th class="centered">Cliente</th>
+                                 <th class="centered">tipo de plaga</th>
                                  <th class="centered">Nivel de servicio</th>
-                                 <th class="centered">Fecha Inicio</th>
-                                 <th class="centered">CFecha fin</th>
-                                 <th class="centered">Frecuencia</th>
-                                 <th class="centered">valor Temtativo</th>
-                                 
-                                 <th class="centered">Observaciones </th>
-                                 <th class="centered">Aprobar</th>
-                                 <th class="centered">Rechazar</th>
+                                 <th class="centered">frecuencia</th>
+                                 <th class="centered">valor inicial</th>
+                                 <th class="centered">visitas inicial</th>
+                                 <th class="centered">valor mantenimiento</th>
+                                 <th class="centered">visitas mantenimiento</th>
+                                 <th class="centered">fecha    de   inicio </th>
+                                 <th class="centered">Orden de servicio</th>
+                                 <th class="centered">Observaciones</th>
+                                 <th class="centered">Plazo factura</th>
+                                 <th class="centered">Estado</th>
+                                 <th class="centered">aprovar</th>
+                                 <th class="centered">denegar</th>
                                  
                               </tr>
                               </thead>
@@ -192,21 +197,27 @@
                              
                                     <% resultado.forEach((ventas) => { %>
                                 <tr>
-                                 <th><%= ventas.ServidorId %></th>
-                                 <th> <%= ventas.Vendedor %></th>
-                                 <th> <%= ventas.Cliente %></th>
-                                 <th> <%= ventas.nivelServicio %></th>
-                                 <th> <%= ventas.FechaInicio %></th>
-                                 <th> <%= ventas.FechaFin %></th>
-                                 <th> <%= ventas.frecuecia %></th>
-                                 <th> <%= ventas.valorTentativo %></th>
-                                 <th> <%= ventas.observaciones %></th> 
-                                 <th > <%= ventas.Acción %>
+                                 <th><%= ventas.contrato_id %></th>
+                                 <th> <%= ventas.teamid %></th>
+                                 <th> <%= ventas.sucursal_id %></th>
+                                 <th> <%= ventas.tipo_plaga %></th>
+                                 <th> <%= ventas.nivelervicio %></th>
+                                 <th> <%= ventas.frecuencia_servicio %></th>
+                                 <th> <%= ventas.valorini %></th>
+                                 <th> <%= ventas.visitasini %></th>
+                                 <th> <%= ventas.valorman %></th> 
+                                 <th > <%= ventas.visitasman %></th>
+                                 <th > <%= ventas.fecha_servicioini %></th>
+                                 <th > <%= ventas.os %></th>
+                                 <th > <%= ventas.Observaciones %></th>
+                                 <th > <%= ventas.plazofactura %></th>
+                                 <th > <%= ventas.estado %></th>
 
-                                     
+
+                                  <th>   
                                     <button class="fa-solid fa-thumbs-up fa-fade fa-2xl" style="color: #2ec253;" type="submit" value="Aceptar" id="Aceptar" name="Aprobar"> </button>
                                  </th> 
-                                 <th><%= ventas.Acción %>
+                                 <th>
                                     <button class="fa-solid fa-thumbs-down fa-fade fa-2xl" style="color: #e10909;" type="submit" value="Rechazar" id="Rechazar" name="Rechazar"></button>
                      
                                  </th> 
@@ -231,16 +242,22 @@
                            <table id="userList" class="table table-bordered table-hover table-striped">
                               <thead class="thead-light">
                               <tr>
-                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">contrato_id</th>
                                  <th class="centered">Vendedor</th>
                                  <th class="centered">Cliente</th>
+                                 <th class="centered">tipo de plaga</th>
                                  <th class="centered">Nivel de servicio</th>
-                                 <th class="centered">Fecha Inicio</th>
-                                 <th class="centered">CFecha fin</th>
-                                 <th class="centered">Frecuencia</th>
-                                 <th class="centered">valor Temtativo</th>
+                                 <th class="centered">frecuencia</th>
+                                 <th class="centered">valor inicial</th>
+                                 <th class="centered">visitas inicial</th>
+                                 <th class="centered">valor mantenimiento</th>
+                                 <th class="centered">visitas mantenimiento</th>
+                                 <th class="centered">fecha    de   inicio </th>
+                                 <th class="centered">Orden de servicio</th>
+                                 <th class="centered">Observaciones</th>
+                                 <th class="centered">Plazo factura</th>
                                  <th class="centered">Estado</th>
-                                 <th class="centered">Observaciones </th>
+                                 
                               </tr>
                               </thead>
           
@@ -248,16 +265,26 @@
                              
                                     <% resultado.forEach((ventas) => { %>
                                 <tr>
-                                 <th><%= ventas.ServidorId %></th>
-                                 <th> <%= ventas.Vendedor %></th>
-                                 <th> <%= ventas.Cliente %></th>
-                                 <th> <%= ventas.nivelServicio %></th>
-                                 <th> <%= ventas.FechaInicio %></th>
-                                 <th> <%= ventas.FechaFin %></th>
-                                 <th> <%= ventas.frecuecia %></th>
-                                 <th> <%= ventas.valorTentativo %></th>
-                                 <th class="status delivered" > <%= ventas.Estado %> </th>
-                                 <th> <%= ventas.observaciones %></th>  
+                                 <th><%= ventas.contrato_id %></th>
+                                 <th> <%= ventas.teamid %></th>
+                                 <th> <%= ventas.sucursal_id %></th>
+                                 <th> <%= ventas.tipo_plaga %></th>
+                                 <th> <%= ventas.nivelervicio %></th>
+                                 <th> <%= ventas.frecuencia_servicio %></th>
+                                 <th> <%= ventas.valorini %></th>
+                                 <th> <%= ventas.visitasini %></th>
+                                 <th> <%= ventas.valorman %></th> 
+                                 <th > <%= ventas.visitasman %></th>
+                                 <th > <%= ventas.fecha_servicioini %></th>
+                                 <th > <%= ventas.os %></th>
+                                 <th > <%= ventas.Observaciones %></th>
+                                 <th > <%= ventas.plazofactura %></th>
+                                 <th > <%= ventas.estado %></th>
+
+
+                                  
+                                
+
                                 </tr>    
                                     <% }); %>
                                    
@@ -277,16 +304,24 @@
                            <table id="userList" class="table table-bordered table-hover table-striped">
                               <thead class="thead-light">
                               <tr>
-                                 <th class="centered">Idservicio</th>
+                                 <th class="centered">contrato_id</th>
                                  <th class="centered">Vendedor</th>
                                  <th class="centered">Cliente</th>
+                                 <th class="centered">tipo de plaga</th>
                                  <th class="centered">Nivel de servicio</th>
-                                 <th class="centered">Fecha Inicio</th>
-                                 <th class="centered">CFecha fin</th>
-                                 <th class="centered">Frecuencia</th>
-                                 <th class="centered">valor Temtativo</th>
+                                 <th class="centered">frecuencia</th>
+                                 <th class="centered">valor inicial</th>
+                                 <th class="centered">visitas inicial</th>
+                                 <th class="centered">valor mantenimiento</th>
+                                 <th class="centered">visitas mantenimiento</th>
+                                 <th class="centered">fecha    de   inicio </th>
+                                 <th class="centered">Orden de servicio</th>
+                                 <th class="centered">Observaciones</th>
+                                 <th class="centered">Plazo factura</th>
                                  <th class="centered">Estado</th>
-                                 <th class="centered">Observaciones </th>
+                                
+                                 
+                                 
                               </tr>
                               </thead>
           
@@ -294,16 +329,24 @@
                              
                                     <% resultado.forEach((ventas) => { %>
                                 <tr>
-                                 <th><%= ventas.ServidorId %></th>
-                                 <th> <%= ventas.Vendedor %></th>
-                                 <th> <%= ventas.Cliente %></th>
-                                 <th> <%= ventas.nivelServicio %></th>
-                                 <th> <%= ventas.FechaInicio %></th>
-                                 <th> <%= ventas.FechaFin %></th>
-                                 <th> <%= ventas.frecuecia %></th>
-                                 <th> <%= ventas.valorTentativo %></th>
-                                 <th class="status cancelled"> <%=  ventas.Estado %></th>
-                                 <th> <%= ventas.observaciones %></th>  
+                                 <th><%= ventas.contrato_id %></th>
+                                 <th> <%= ventas.teamid %></th>
+                                 <th> <%= ventas.sucursal_id %></th>
+                                 <th> <%= ventas.tipo_plaga %></th>
+                                 <th> <%= ventas.nivelervicio %></th>
+                                 <th> <%= ventas.frecuencia_servicio %></th>
+                                 <th> <%= ventas.valorini %></th>
+                                 <th> <%= ventas.visitasini %></th>
+                                 <th> <%= ventas.valorman %></th> 
+                                 <th > <%= ventas.visitasman %></th>
+                                 <th > <%= ventas.fecha_servicioini %></th>
+                                 <th > <%= ventas.os %></th>
+                                 <th > <%= ventas.Observaciones %></th>
+                                 <th > <%= ventas.plazofactura %></th>
+                                 <th > <%= ventas.estado %></th>
+
+
+                              
                                 </tr>    
                                     <% }); %>
                                    
