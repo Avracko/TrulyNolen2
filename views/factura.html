@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura PDF</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS opcional para dar estilo a tu factura -->
+</head>
+<body>
+
+<div id="invoice">
+  <h2>Factura</h2>
+  <p>Cliente: John Doe</p>
+  <p>Fecha: 28 de noviembre de 2023</p>
+
+  <table border="1" cellspacing="0" cellpadding="10" width="100%">
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Producto 1</td>
+        <td>2</td>
+        <td>$10.00</td>
+        <td>$20.00</td>
+      </tr>
+      <tr>
+        <td>Producto 2</td>
+        <td>1</td>
+        <td>$15.00</td>
+        <td>$15.00</td>
+      </tr>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+
+  <p>Total: $35.00</p>
+
+  <button onclick="generatePDF()">Generar PDF</button>
+</div>
+
+<!-- Importar la biblioteca html2pdf.js desde un CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  function generatePDF() {
+    const element = document.getElementById('invoice');
+
+    html2pdf(element)
+      .then((pdf) => {
+        // Guardar o mostrar el PDF
+        pdf.save('factura.pdf');
+      })
+      .catch((error) => {
+        console.error('Error al generar el PDF:', error);
+      });
+  }
+</script>
+
+</body>
+</html>
