@@ -67,7 +67,7 @@ app.get('/postventa',function(req,res){
         
 })
 
-
+//calendario
 app.get('/calendario',function(req,res){
 
     res.render('calendario')
