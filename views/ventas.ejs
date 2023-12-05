@@ -215,10 +215,10 @@
 
 
                                   <th>   
-                                    <button class="fa-solid fa-thumbs-up fa-fade fa-2xl" style="color: #2ec253;" type="submit" value="Aceptar" id="Aceptar" name="Aprobar"> </button>
+                                    <button class="fa-solid fa-thumbs-up fa-fade fa-2xl" style="color: #2ec253;"  value="Aceptar" id="Aceptar" name="Aprobar" onclick="location.href='/ventas/aprov/<%= ventas.contrato_id %>'"> </button>
                                  </th> 
                                  <th>
-                                    <button class="fa-solid fa-thumbs-down fa-fade fa-2xl" style="color: #e10909;" type="submit" value="Rechazar" id="Rechazar" name="Rechazar"></button>
+                                    <button class="fa-solid fa-thumbs-down fa-fade fa-2xl" style="color: #e10909;" value="Rechazar" id="Rechazar" name="Rechazar" onclick="location.href='/ventas/deni/<%= ventas.contrato_id %>'"></button>
                      
                                  </th> 
                                 
@@ -263,7 +263,7 @@
           
                                  <tbody id="tableBody_users">
                              
-                                    <% resultado.forEach((ventas) => { %>
+                                    <% aprov.forEach((ventas) => { %>
                                 <tr>
                                  <th><%= ventas.contrato_id %></th>
                                  <th> <%= ventas.teamid %></th>
@@ -327,7 +327,7 @@
           
                                  <tbody id="tableBody_users">
                              
-                                    <% resultado.forEach((ventas) => { %>
+                                    <% reject.forEach((ventas) => { %>
                                 <tr>
                                  <th><%= ventas.contrato_id %></th>
                                  <th> <%= ventas.teamid %></th>

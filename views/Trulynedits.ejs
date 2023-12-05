@@ -172,45 +172,17 @@
                      <h4>Editar Cliente</h4>
                   </div>
                   <div class="card-body">
-                     <form class="form"  id="formulario-editar" action="/update" method="post">
-                        <div class="form-group row">
-                           <div class="col-lg-9">
-                              <input type="number" class="form-control" id="id" name="id" value="<%= user.cliente_id %>" hidden>
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="col-lg-3 col-form-label form-control-label">Cliente</label>
-                           <div class="col-lg-9">
-                              <input type="text" class="form-control" id="cliente" name="cliente" value="<%= user.razonsocial %>">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="col-lg-3 col-form-label form-control-label">Identificador</label>
-                           <div class="col-lg-9">
-                              <input type="text" class="form-control" id="identificador" name="identificador" value="<%= user.mote%>">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="col-lg-3 col-form-label form-control-label">RTN</label>
-                           <div class="col-lg-9">
-                              <input type="text" class="form-control" id="rtn" name="rtn" value="<%= user.rtn %>">
-                           </div>
-                        </div>
+                     <form class="form"  id="formulario-editar" action="/adds" method="post">
+                        
                         <div class="form-group row">
                            <label class="col-lg-3 col-form-label form-control-label">Direccion</label>
                            <div class="col-lg-9">
-                              <input type="text" class="form-control" id="direccion" name="direccion" value="<%= user.direccion %>">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="col-lg-3 col-form-label form-control-label">Moteide</label>
-                           <div class="col-lg-9">
-                              <input type="text" class="form-control" id="contacto" name="contacto" value="<%= user.moteide %>">
+                              <input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion">
                            </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-9">
-                               <input  class="form-control" id="sucursalid" name="sucursalid" value="<%= user.sucursal_id %>" hidden>
+                               <input  class="form-control" id="sucursalid" name="sucursalid" value="<%= user.cliente_id %>" hidden>
                             </div>
                          </div>
                         <div class="form-group row">
@@ -218,7 +190,7 @@
                            </div>
                         </div>
                         
-                        <input class="btn btn-primary" type="submit" value="update" id="actualizar" name="actualizar">
+                        <input class="btn btn-primary" type="submit" value="update" id="add" name="add">
                     
                      </form>
                   </div>

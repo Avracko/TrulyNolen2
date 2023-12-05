@@ -34,6 +34,33 @@ crud_truly.edit = (req, res) => {
     })   
 }
 
+
+crud_truly.edits = (req, res) => {
+    const id = req.params.id
+    con.query('select c.cliente_id from clientes c where c.cliente_id = ?',[id],(error , results)=>{
+        if (error) {
+            throw error;
+        }else{            
+            res.render('Trulynedits',{user:results[0]})
+        }
+    })   
+}
+
+crud_truly.add = (req, res) => {
+    
+    const direccion = req.body.direccion;
+    const sucursal_id = req.body.sucursalid;
+    console.log(sucursal_id);
+    con.query('insert into sucursales(cliente_id,direccion) values (?,?)',[sucursal_id,direccion],(error , results)=>{
+        if (error) {
+            throw error;
+        }else{            
+                res.redirect('/truly')
+                }
+            })
+        }
+ 
+
 crud_truly.update = (req, res) => {
     
     const id = req.body.id;
@@ -60,6 +87,7 @@ crud_truly.update = (req, res) => {
     })
  
 }
+
 
 crud_truly.borrar = (req, res) => {
     
